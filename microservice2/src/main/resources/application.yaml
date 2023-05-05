@@ -1,0 +1,14 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          service2-client:
+            client-id: service-1
+            client-secret: service1
+            authorization-grant-type: client_credentials
+            scope: articles.read
+            client-name: spring-client
+        provider:
+          service2-client:
+            token-uri: http://localhost:8082/oauth2/token

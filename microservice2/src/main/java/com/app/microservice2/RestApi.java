@@ -15,13 +15,13 @@ public class RestApi {
    }
 
     @GetMapping("/service/two")
-    public String[] hello(){
+    public String hello(){
         return webClient
                 .get()
-                .uri("http://localhost:8083/service/one")
-                .attributes(clientRegistrationId("articles-client"))
+                .uri("http://localhost:8083/service/one/from/two")
+                .attributes(clientRegistrationId("service-2"))
                 .retrieve()
-                .bodyToMono(String[].class)
+                .bodyToMono(String.class)
                 .block();
     }
 }

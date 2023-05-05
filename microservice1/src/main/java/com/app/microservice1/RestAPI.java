@@ -11,4 +11,9 @@ public class RestAPI {
     public String hello(){
         return "Hello from microservice 1";
     }
+
+    @GetMapping("/service/one/from/two")
+    public String hello2(){
+        return "Hello from microservice 1 but requested from microservice 2";
+    }
 }

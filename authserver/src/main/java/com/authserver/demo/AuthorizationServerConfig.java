@@ -42,14 +42,23 @@ public class AuthorizationServerConfig {
     @Bean
     public RegisteredClientRepository registeredClientRepository() {
         RegisteredClient registeredClient = RegisteredClient.withId(UUID.randomUUID().toString())
-                .clientId("zita")
+                .clientId("anthony")
                 .clientSecret( getPasswordEncoder().encode("tembo"))
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
                 .scope(OidcScopes.OPENID)
                 .scope("service1.read")
                 .build();
-        return new InMemoryRegisteredClientRepository(registeredClient);
+
+        RegisteredClient service2 = RegisteredClient.withId(UUID.randomUUID().toString())
+                .clientId("service-2")
+                .clientSecret( getPasswordEncoder().encode("service2"))
+                .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
+                .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
+                .scope(OidcScopes.OPENID)
+                .scope("service1.read")
+                .build();
+        return new InMemoryRegisteredClientRepository(registeredClient, service2);
     }
 
     @Bean

@@ -11,7 +11,7 @@
 #### Flow:
 1. Add credentials to the auth server in the Registered Clients Repository. clientId and secret which is analogues username and password respectively.
 2. Get token by authenticating using Basic Authentication to the Auth server with URL http://localhost:8082/oauth2/token?grant_type=client_credentials.
-3. Once the token is generated, make a request to the Microservice 1, Pass the bearer in the header.
+3. Once the token is generated, make a request to the Microservice 1, Pass the bearer token in the header using URL http://localhost:8083/service/one.
 4. Add credentials to the auth server in the Registered Clients Repository to test service to service authentication.
 5. In Microservice 2, configure the clientId, secret and link to the auth server in the application.yaml file.
-6. Access the next REST endpoint in Microservice 2. If configure correctly, you should see this message `Hello from microservice 1 but requested from microservice 2`.
+6. Access the REST endpoint http://localhost:8084/service/two in Microservice 2. If configure correctly, you should see this message `Hello from microservice 1 but requested from microservice 2`.

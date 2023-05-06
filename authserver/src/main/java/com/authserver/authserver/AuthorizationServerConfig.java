@@ -1,4 +1,4 @@
-package com.authserver.demo;
+package com.authserver.authserver;
 
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;

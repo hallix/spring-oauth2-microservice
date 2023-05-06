@@ -1,4 +1,4 @@
-package com.authserver.demo;
+package com.authserver.authserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
